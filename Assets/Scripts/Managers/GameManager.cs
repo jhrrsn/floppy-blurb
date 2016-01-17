@@ -131,8 +131,11 @@ public class GameManager : MonoBehaviour {
 //		CancelInvoke ("SpawnCloudFromPool");
 //		CancelInvoke ("SpawnHillFromPool");
 
-		playCount++;
-		PlayerPrefs.SetInt(playCountKey, playCount);
+		if (playCount > 0 || currentScore > 0)
+		{
+			playCount++;
+			PlayerPrefs.SetInt (playCountKey, playCount);
+		}
 
 		birdAlive = false;
 
